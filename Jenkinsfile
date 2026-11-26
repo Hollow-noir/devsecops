@@ -17,6 +17,8 @@ stages {
 			allways {
 				junit 'target/surefire-reports/*.xml'
 				jacoco execPattern: 'target/jacoco.exec'
+			}
+		   }
 	    }
 	}
 }
