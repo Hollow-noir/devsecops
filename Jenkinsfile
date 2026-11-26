@@ -9,10 +9,14 @@ stages {
 		   }
 	    }
 
-	stage('Unit Test') {
+	stage('Unit Tests- JUnit and JaCoCo') {
 		steps {
 			sh "mvn test"
 		   }
+		   post {
+			allways {
+				junit 'target/surefire-reports/*.xml'
+				jacoco execPattern: 'target/jacoco.exec'
 	    }
 	}
 }
