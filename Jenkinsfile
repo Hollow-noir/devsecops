@@ -20,6 +20,16 @@ pipeline {
 			  }
             }
 		}
+
+
+		stage('docker build and push') {
+
+			steps {
+				sh 'printenv'
+				sh 'sudo docker build -t hollownoir/numeric-app:""$GIT_COMMIT"" .'
+				sh 'docker push hollownoir/numeric-app:""$GIT_COMMIT""'
+			}
+		}
 	}
 }
 
