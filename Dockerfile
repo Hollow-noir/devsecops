@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
+FROM eclipse-temurin:8-jre-alpine
 # FROM adoptopenjdk/openjdk8:alpine-slim
 EXPOSE 8080
 ARG JAR_FILE=target/*.jar
